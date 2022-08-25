@@ -1,5 +1,19 @@
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
+
+  //A fetch request is sent to the API
+  //What the function returns is asynchronous
+  fetch ('https://anapioficeandfire.com/api/books')
+  .then(function(response) {
+    return response.json()
+  })
+
+  //Waiting for the code above to load, this will load first
+  //Returns the identified data 
+  .then(function(json) {
+    return renderBooks(json)
+  })
+  
   
 }
 
